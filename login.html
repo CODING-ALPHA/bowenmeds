@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Pharma Shop</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="CSS/login.css" />
+    <script>
+      // Prevent access to login page if already authenticated
+      const token = localStorage.getItem("token");
+      if (token) {
+        // const role = localStorage.getItem("role");
+        // if (role && role.toLowerCase() === "admin") {
+        //   window.location.replace("dashboard/");
+        // } else {
+          window.location.replace("index.html");
+        // }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2><i class="fas fa-pills"></i> BowenMeds</h2>
+      <form id="loginForm" method="post">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="username" placeholder="Username" required />
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="forgot-password">
+          <a href="forgot-password.html">Forgot password?</a>
+        </div>
+
+        <button type="submit" id="loginBtn">Login</button>
+      </form>
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+    <script src="js/loginauth.js"></script>
+  </body>
+</html>

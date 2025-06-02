@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Medicines | BowenMeds</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/browse.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo"> <i class="fas fa-pills"></i> BowenMeds </a>
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="browse.html" class="active">
+              <i class="fas fa-search"></i> Browse
+            </a>
+          </li>
+          <li>
+            <a href="cart.html">
+              <i class="fas fa-shopping-cart"></i> Cart
+              <span class="cart-count" id="cartCount">0</span>
+            </a>
+          </li>
+          <!-- This will be replaced by JS -->
+          <li id="authSection">
+            <a href="login.html"> <i class="fas fa-user"></i> Login </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="🔍 Search medicines..."
+          oninput="filterMedicines()"
+        />
+      </div>
+
+      <div id="medicinesGrid" class="medicines-grid">
+        <!-- Medicine cards will be dynamically inserted here -->
+      </div>
+
+      <div class="footer">
+        <p>&copy; 2025 BowenMeds. All rights reserved.</p>
+      </div>
+    </div>
+
+    <!-- Cart Notification Modal -->
+    <div class="cart-notification" id="cartNotification">
+      <div class="notification-content">
+        <span id="notificationMessage"></span>
+        <button class="close-btn" onclick="hideNotification()">&times;</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="registrationModal" class="modal-overlay">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+
+        <!-- Icons -->
+        <div class="modal-icon success" style="display: none">
+          <i
+            class="fas fa-check-circle"
+            style="color: green; font-size: 40px"
+          ></i>
+        </div>
+        <div class="modal-icon error" style="display: none">
+          <i
+            class="fas fa-exclamation-circle"
+            style="color: red; font-size: 40px"
+          ></i>
+        </div>
+
+        <!-- Title + Message -->
+        <h2 id="modalTitle" class="modal-title"></h2>
+        <p id="modalMessage" class="modal-message"></p>
+
+        <!-- Action Button -->
+        <button id="modalActionButton" class="modal-button">OK</button>
+      </div>
+    </div>
+
+    <script src="js/browse.js"></script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>

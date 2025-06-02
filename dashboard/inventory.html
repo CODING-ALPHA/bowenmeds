@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management | BowenMeds</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/inventory.css" />
+  </head>
+  <body>
+    <!-- Sidebar (same as index.html) -->
+    <div class="sidebar">
+      <div class="logo">
+        <h2>BowenMeds</h2>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="medicines.html" class="nav-link">
+            <i class="fas fa-pills"></i>
+            <span>Medicines</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="inventory.html" class="nav-link active">
+            <i class="fas fa-boxes"></i>
+            <span>Inventory</span>
+          </a>
+        </li>
+        <!-- Other menu items same as index.html -->
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header (same as index.html) -->
+      <div class="header">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search inventory..." />
+        </div>
+        <div class="user-profile">
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="User"
+          />
+          <span>Admin</span>
+        </div>
+      </div>
+
+      <!-- Inventory Management -->
+      <div class="section-header">
+        <h3 class="section-title">Inventory Management</h3>
+        <div>
+          <button class="btn btn-primary">Add Stock</button>
+          <button class="btn btn-secondary">Export</button>
+        </div>
+      </div>
+
+      <!-- Inventory Summary -->
+      <div class="dashboard-cards">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Total Items</div>
+            <div class="card-icon bg-primary">
+              <i class="fas fa-box"></i>
+            </div>
+          </div>
+          <div class="card-value">1,248</div>
+          <div class="card-footer">12 categories</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">In Stock</div>
+            <div class="card-icon bg-success">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="card-value">1,120</div>
+          <div class="card-footer">90% availability</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Low Stock</div>
+            <div class="card-icon bg-warning">
+              <i class="fas fa-exclamation"></i>
+            </div>
+          </div>
+          <div class="card-value">28</div>
+          <div class="card-footer">Need reorder</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Expiring Soon</div>
+            <div class="card-icon bg-danger">
+              <i class="fas fa-clock"></i>
+            </div>
+          </div>
+          <div class="card-value">15</div>
+          <div class="card-footer">Within 30 days</div>
+        </div>
+      </div>
+
+      <!-- Inventory Table -->
+      <div class="recent-orders">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Medicine</th>
+              <th>Batch No.</th>
+              <th>Quantity</th>
+              <th>Stock Level</th>
+              <th>Expiry Date</th>
+              <th>Supplier</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#INV-2001</td>
+              <td>Paracetamol 500mg</td>
+              <td><span class="batch-badge">BATCH-001</span></td>
+              <td>120</td>
+              <td>
+                <div>High</div>
+                <div class="stock-indicator">
+                  <div class="stock-level high-stock" style="width: 90%"></div>
+                </div>
+              </td>
+              <td>12/2024</td>
+              <td>ABC Pharma</td>
+              <td>
+                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                <button class="action-btn"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>#INV-2002</td>
+              <td>Amoxicillin 250mg</td>
+              <td><span class="batch-badge">BATCH-042</span></td>
+              <td>45</td>
+              <td>
+                <div>Medium</div>
+                <div class="stock-indicator">
+                  <div
+                    class="stock-level medium-stock"
+                    style="width: 60%"
+                  ></div>
+                </div>
+              </td>
+              <td>08/2024</td>
+              <td>XYZ Meds</td>
+              <td>
+                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                <button class="action-btn"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>#INV-2003</td>
+              <td>Cetirizine 10mg</td>
+              <td><span class="batch-badge">BATCH-105</span></td>
+              <td>8</td>
+              <td>
+                <div>Low</div>
+                <div class="stock-indicator">
+                  <div class="stock-level low-stock" style="width: 15%"></div>
+                </div>
+              </td>
+              <td>05/2025</td>
+              <td>Global Pharma</td>
+              <td>
+                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                <button class="action-btn"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>#INV-2004</td>
+              <td>Omeprazole 20mg</td>
+              <td><span class="batch-badge">BATCH-078</span></td>
+              <td>32</td>
+              <td>
+                <div>Medium</div>
+                <div class="stock-indicator">
+                  <div
+                    class="stock-level medium-stock"
+                    style="width: 45%"
+                  ></div>
+                </div>
+              </td>
+              <td>11/2023</td>
+              <td>MediCorp</td>
+              <td>
+                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                <button class="action-btn"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>#INV-2005</td>
+              <td>Vitamin C 500mg</td>
+              <td><span class="batch-badge">BATCH-112</span></td>
+              <td>56</td>
+              <td>
+                <div>High</div>
+                <div class="stock-indicator">
+                  <div class="stock-level high-stock" style="width: 80%"></div>
+                </div>
+              </td>
+              <td>03/2025</td>
+              <td>NutraLife</td>
+              <td>
+                <button class="action-btn"><i class="fas fa-eye"></i></button>
+                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                <button class="action-btn"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

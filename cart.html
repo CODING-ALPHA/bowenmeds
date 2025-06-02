@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart || BowenMeds</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="CSS/cart.css" />
+    <link rel="stylesheet" href="CSS/nav.css" />
+    <script>
+      // Block access immediately if not authenticated
+      const token = localStorage.getItem("token");
+      if (!token) {
+        window.location.replace("index.html");
+      }
+    </script>
+    <style>
+      /* Additional inline styles for immediate visual feedback */
+      .qty-btn:active {
+        transform: scale(0.95);
+      }
+      .remove-btn:active {
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="logo"> <i class="fas fa-pills"></i> BowenMeds </a>
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li>
+            <a href="index.html" class="active">
+              <i class="fas fa-search"></i> Browse
+            </a>
+          </li>
+          <li>
+            <a href="cart.html">
+              <i class="fas fa-shopping-cart"></i> Cart
+              <span class="cart-count" id="cartCount">0</span>
+            </a>
+          </li>
+          <!-- This will be replaced by JS -->
+          <li id="authSection">
+            <a href="login.html"> <i class="fas fa-user"></i> Login </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Shopping Cart</h1>
+      <div id="cartItems" class="cart-items">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+      <div class="cart-footer">
+        <div class="total-row">
+          <h2>Total:</h2>
+          <span id="totalPrice">₦0</span>
+        </div>
+        <button
+          id="checkoutBtn"
+          onclick="checkout()"
+          class="checkout-btn"
+          disabled
+        >
+          <i class="fas fa-credit-card"></i> Proceed to Checkout
+        </button>
+      </div>
+    </div>
+
+    <script src="JS/cart.js">
+      c
+    </script>
+    <script src="js/nav.js"></script>
+  </body>
+</html>

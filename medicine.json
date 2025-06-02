@@ -1,0 +1,104 @@
+{
+  "medicines": [
+    {
+      "id": 1,
+      "name": "Paracetamol 500mg",
+      "description": "Pain reliever and fever reducer",
+      "category": "analgesic",
+      "price": 2.50,
+      "stock": 120,
+      "expiryDate": "2024-12-31",
+      "image": "https://via.placeholder.com/150?text=Paracetamol"
+    },
+    {
+      "id": 2,
+      "name": "Amoxicillin 250mg",
+      "description": "Antibiotic for bacterial infections",
+      "category": "antibiotic",
+      "price": 5.20,
+      "stock": 45,
+      "expiryDate": "2024-08-15",
+      "image": "https://via.placeholder.com/150?text=Amoxicillin"
+    },
+    {
+      "id": 3,
+      "name": "Cetirizine 10mg",
+      "description": "Antihistamine for allergy relief",
+      "category": "antihistamine",
+      "price": 3.75,
+      "stock": 8,
+      "expiryDate": "2025-05-20",
+      "image": "https://via.placeholder.com/150?text=Cetirizine"
+    },
+    {
+      "id": 4,
+      "name": "Omeprazole 20mg",
+      "description": "Proton pump inhibitor for acid reflux",
+      "category": "antacid",
+      "price": 4.80,
+      "stock": 32,
+      "expiryDate": "2023-11-30",
+      "image": "https://via.placeholder.com/150?text=Omeprazole"
+    },
+    {
+      "id": 5,
+      "name": "Vitamin C 500mg",
+      "description": "Dietary supplement with antioxidant properties",
+      "category": "vitamin",
+      "price": 6.50,
+      "stock": 56,
+      "expiryDate": "2025-03-15",
+      "image": "https://via.placeholder.com/150?text=Vitamin+C"
+    },
+    {
+      "id": 6,
+      "name": "Ibuprofen 200mg",
+      "description": "Nonsteroidal anti-inflammatory drug for pain relief",
+      "category": "analgesic",
+      "price": 3.25,
+      "stock": 0,
+      "expiryDate": "2024-09-10",
+      "image": "https://via.placeholder.com/150?text=Ibuprofen"
+    },
+    {
+      "id": 7,
+      "name": "Loratadine 10mg",
+      "description": "Non-drowsy antihistamine for allergies",
+      "category": "antihistamine",
+      "price": 4.20,
+      "stock": 15,
+      "expiryDate": "2025-01-25",
+      "image": "https://via.placeholder.com/150?text=Loratadine"
+    },
+    {
+      "id": 8,
+      "name": "Calcium Carbonate 500mg",
+      "description": "Antacid for heartburn and indigestion",
+      "category": "antacid",
+      "price": 3.90,
+      "stock": 42,
+      "expiryDate": "2024-10-05",
+      "image": "https://via.placeholder.com/150?text=Calcium"
+    },
+    {
+      "id": 9,
+      "name": "Vitamin D3 1000IU",
+      "description": "Supplement for bone health and immune support",
+      "category": "vitamin",
+      "price": 7.80,
+      "stock": 28,
+      "expiryDate": "2025-06-30",
+      "image": "https://via.placeholder.com/150?text=Vitamin+D"
+    },
+    {
+      "id": 10,
+      "name": "Azithromycin 500mg",
+      "description": "Macrolide antibiotic for bacterial infections",
+      "category": "antibiotic",
+      "price": 8.40,
+      "stock": 12,
+      "expiryDate": "2024-07-20",
+      "image": "https://via.placeholder.com/150?text=Azithromycin"
+    }
+  ]
+}
