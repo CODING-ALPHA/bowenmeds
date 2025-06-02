@@ -25,14 +25,14 @@ window.addEventListener("DOMContentLoaded", () => {
       if (user && user.username) {
         usernameElement.textContent = user.username;
       } else {
-        usernameElement.textContent = "User"; // Default if name not found
+        usernameElement.textContent = "Admin"; // Default if name not found
       }
     } catch (e) {
       console.error("Error parsing user data:", e);
-      usernameElement.textContent = "User"; // Default if parsing fails
+      usernameElement.textContent = "Admin"; // Default if parsing fails
     }
   } else {
-    usernameElement.textContent = "User"; // Default if no user data
+    usernameElement.textContent = "Admin"; // Default if no user data
   }
 
   // Logout

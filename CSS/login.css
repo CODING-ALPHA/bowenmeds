@@ -16,14 +16,18 @@
 }
 
 body {
-  background-color: var(--secondary-color);
+  /* background-color: var(--secondary-color); */
   color: var(--text-color);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: linear-gradient(180deg, #1e90ff, #00bfff);
+  /* background: linear-gradient(180deg, #1e90ff, #00bfff); */
+  background-image: url("../img/drug\ 3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .container {

@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/medicines.css" />
     <style>
       /* Additional styles for medicines page */
@@ -143,7 +143,7 @@
         </div>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="index.html" class="nav-link">
+            <a href="dashboard.html" class="nav-link">
               <i class="fas fa-home"></i>
               <span>Dashboard</span>
             </a>
@@ -414,34 +414,7 @@
         </div>
       </div>
     </div>
-
     <script src="js/medicine.js"></script>
-    <script>
-      // Sidebar toggle functionality
-      document.addEventListener("DOMContentLoaded", function() {
-        const burger = document.getElementById("burger");
-        const sidebar = document.getElementById("sidebar");
-        const closeIcon = document.getElementById("close-icon");
-
-        burger.addEventListener("click", function() {
-          sidebar.classList.toggle("active");
-        });
-
-        closeIcon.addEventListener("click", function() {
-          sidebar.classList.remove("active");
-        });
-
-        // Logout functionality
-        document.getElementById("logout").addEventListener("click", function(e) {
-          e.preventDefault();
-          localStorage.removeItem("token");
-          window.location.href = "login.html";
-        });
-
-        // Set username from localStorage if available
-        const username = localStorage.getItem("username") || "Admin";
-        document.getElementById("username").textContent = username;
-      });
-    </script>
+  <script src="JS/nav2.js"></script>
   </body>
 </html>

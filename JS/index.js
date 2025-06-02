@@ -31,17 +31,17 @@ fetch("https://pharmacy-api-v746.onrender.com/api/Medicines", {
     console.error("Error fetching medicines:", error);
   });
 
-// Fetch customer count
-fetch("https://pharmacy-api-v746.onrender.com/api/Customers", {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-})
-  .then((response) => response.json())
-  .then((data) => {
-    const customerCount = document.getElementById("customer-count");
-    customerCount.textContent = data.count ?? 0;
-  })
-  .catch((error) => {
-    console.error("Error fetching customer count:", error);
-  });
+// // Fetch customer count
+// fetch("https://pharmacy-api-v746.onrender.com/api/Customers/count", {
+//   headers: {
+//     Authorization: `Bearer ${token}`,
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     const customerCount = document.getElementById("customer-count");
+//     customerCount.textContent = data.count ?? 0;
+//   })
+//   .catch((error) => {
+//     console.error("Error fetching customer count:", error);
+//   });

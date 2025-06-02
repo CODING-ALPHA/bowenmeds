@@ -36,7 +36,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
     // Redirect based on role
     if (data.role.toLowerCase() === 'admin') {
-      window.location.href = 'dashboard/';
+      window.location.href = 'dashboard.html';
     } else {
       window.location.href = 'index.html';
     }
