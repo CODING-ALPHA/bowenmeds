@@ -10,15 +10,15 @@
     />
     <link rel="stylesheet" href="CSS/login.css" />
     <script>
-      // Prevent access to login page if already authenticated
       const token = localStorage.getItem("token");
       if (token) {
-        // const role = localStorage.getItem("role");
-        // if (role && role.toLowerCase() === "admin") {
-        //   window.location.replace("dashboard/");
-        // } else {
-          window.location.replace("index.html");
-        // }
+        const role = localStorage.getItem("role");
+        if (role && role.toLowerCase() === "admin") {
+          window.location.replace("dashboard.html");
+        } else {
+          localStorage.clear();
+          window.location.href("index.html");
+        }
       }
     </script>
   </head>

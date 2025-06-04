@@ -13,17 +13,21 @@ window.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.remove("open");
   });
 
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   // Set username from localStorage
   const usernameElement = document.getElementById("username");
-  
+
   // Try to get user data from localStorage
-  const userData = localStorage.getItem("user");
-  
+  const userData = localStorage.getItem("username");
+
   if (userData) {
     try {
-      const user = JSON.parse(userData);
-      if (user && user.username) {
-        usernameElement.textContent = user.username;
+      const user = userData;
+      if (user) {
+        usernameElement.textContent = capitalizeFirstLetter(user); // Capitalize first letter
       } else {
         usernameElement.textContent = "Admin"; // Default if name not found
       }
@@ -38,8 +42,8 @@ window.addEventListener("DOMContentLoaded", () => {
   // Logout
   document.getElementById("logout").addEventListener("click", (e) => {
     e.preventDefault(); // Prevent default anchor behavior
-    localStorage.removeItem("user");
-    localStorage.removeItem("token"); // Also remove token if exists
-    window.location.href = "login.html"; // Redirect to login page
+    localStorage.clear();
+    // localStorage.removeItem("token");
+    window.location.href = "index.html";
   });
 });
