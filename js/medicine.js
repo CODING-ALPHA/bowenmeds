@@ -109,19 +109,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const tr = document.createElement("tr");
 
       // Determine stock status
-      // let stockStatus = "";
-      // let stockClass = "";
-      // if (medicine.stock === true) {
-      //   stockStatus = "Out of Stock";
-      //   stockClass = "out-of-stock";
-      // } else if (medicine.stock <= true) {
-      //   stockStatus = "Low Stock";
-      //   stockClass = "low-stock";
-      // } 
-      // else {
-      //   stockStatus = "In Stock";
-      //   stockClass = "in-stock";
-      // }
+      let stockStatus = "";
+      let stockClass = "";
+      if (medicine.quantity === 0) {
+        stockStatus = "Out of Stock";
+        stockClass = "out-of-stock";
+      } else if (medicine.quantity <= 10) {
+        stockStatus = "Low Stock";
+        stockClass = "low-stock";
+      } else {
+        stockStatus = "In Stock";
+        stockClass = "in-stock";
+      }
 
       tr.innerHTML = `
               <td>${index + 1}</td>
@@ -129,7 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
               <td>${medicine.description}</td>
               <td>₦${medicine.price.toFixed(2)}</td>
               <td>${medicine.category}</td>
-             
+              <td><span class="stock-badge ${stockClass}">${stockStatus} (${
+        medicine.quantity
+      })</span></td>
               <td>
                 <div class="action-buttons">
                   <button class="action-btn view-btn" onclick="viewMedicine(${
@@ -236,7 +237,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!response.ok) {
           throw new Error(`Failed to ${isEdit ? "update" : "add"} medicine`);
         }
-        return response.json();
+        // return response.json();
+        return response;
       })
       .then(() => {
         medicineModal.style.display = "none";
@@ -267,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
     viewMedicineId.textContent = medicine.id;
     viewMedicineCategory.textContent = medicine.category;
     viewMedicinePrice.textContent = medicine.price.toFixed(2);
-    viewMedicineStock.textContent = medicine.stock;
+    viewMedicineStock.textContent = medicine.quantity;
     viewMedicineDescription.textContent = medicine.description;
 
     viewMedicineModal.style.display = "block";
@@ -281,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
     medicineName.value = medicine.name;
     medicineCategory.value = medicine.category;
     medicinePrice.value = medicine.price;
-    medicineStock.value = medicine.stock;
+    medicineStock.value = medicine.quantity;
     medicineDescription.value = medicine.description;
 
     modalTitle.textContent = "Edit Medicine";
@@ -344,10 +346,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Apply status filter
     if (status) {
       filteredMedicines = filteredMedicines.filter((medicine) => {
-        if (status === "in-stock") return medicine.stock > 10;
+        if (status === "in-stock") return medicine.quantity > 10;
         if (status === "low-stock")
-          return medicine.stock > 0 && medicine.stock <= 10;
-        if (status === "out-of-stock") return medicine.stock === 0;
+          return medicine.quantity > 0 && medicine.quantity <= 10;
+        if (status === "out-of-stock") return medicine.quantity === 0;
         return true;
       });
     }

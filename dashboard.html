@@ -3,10 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta http-equiv="Cache-Control" content="no-store" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" /> -->
-
     <title>BowenMeds Dashboard</title>
     <link
       rel="stylesheet"
@@ -71,7 +67,7 @@
           <i class="fas fa-bars"></i>
         </button>
         <div class="search-bar">
-          <i class="fas fa-search"></i>
+          <i class="fas fa-search" id="searchIcon"></i>
           <input type="text" id="searchInput" placeholder="Search..." />
         </div>
         <div class="user-profile" id="user-profile">
@@ -101,21 +97,39 @@
         </div>
         <div class="card">
           <div class="card-header">
-            <div class="card-title">Total Users</div>
+            <div class="card-title">Medicines In Stock</div>
+            <div class="card-icon bg-success">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="card-value" id="instock-count">0</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Out Of Stock</div>
+            <div class="card-icon bg-danger">
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+          <div class="card-value" id="outstock-count">0</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Total Customers</div>
             <div class="card-icon bg-success">
               <i class="fas fa-user"></i>
             </div>
           </div>
-          <div class="card-value" id="customer-count">356</div>
+          <div class="card-value" id="customer-count">0</div>
         </div>
         <div class="card">
           <div class="card-header">
             <div class="card-title">Revenue</div>
             <div class="card-icon bg-danger">
-              <i class="fas fa-dollar-sign"></i>
+              <i class="fas fa-naira-sign"></i>
             </div>
           </div>
-          <div class="card-value">₦<span>24,780</span></div>
+          <div class="card-value">₦<span id="revenue">0</span></div>
         </div>
       </div>
 
